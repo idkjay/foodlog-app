@@ -1,6 +1,29 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @entry %>
+
+<p>
+  <strong>Meal Type:</strong>
+  <%= @entry.meal_type %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @entry.calories %>
+</p>
+
+<p>
+  <strong>Proteins:</strong>
+  <%= @entry.proteins %>
+</p>
+
+<p>
+  <strong>Carbohydrates:</strong>
+  <%= @entry.carbohydrates %>
+</p>
+
+<p>
+  <strong>Sodium:</strong>
+  <%= @entry.sodium %>
+</p>
 
 <div>
   <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
