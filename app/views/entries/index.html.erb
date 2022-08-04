@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Jordan's Food Log &ndash; <%= DateTime.now %>
+  Jordan's Food Log &ndash; <%= DateTime.now.to_fs(:nice_date) %>
 <% end %>
 
 <div class="columns mt-6 is-centered">
@@ -7,7 +7,7 @@
   <div class="column is-one-quarter">
     <div class="card">
       <header class="card-header">
-        <%= entry.meal_type %>
+        <p class="card-header-title"><%= entry.meal_type %></p>
       </header>
       <div class="card-content">
         <div class="content">
