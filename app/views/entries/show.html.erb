@@ -32,8 +32,9 @@
 
     <div class="columns is-mobile">
       <div class="column">
+        <%= link_to "Return", root_path, class: "button is-gray"%>
         <%= link_to "Edit", edit_entry_path(@entry), class: "button is-gray" %> 
-        <%= link_to 'Destroy', entry_path(@entry), data: { turbo_method: :delete }, class: "button is-gray" %>
+        <%= link_to 'Destroy', @entry, data: { turbo_method: :delete, 'confirm': "Are you sure?" }, class: "button is-gray" %>
       </div>
       <div class="column">
       
