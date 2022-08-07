@@ -52,7 +52,7 @@ class EntriesController < ApplicationController
     @entry.destroy
 
     respond_to do |format|
-      format.html { redirect_to entries_url, notice: "Entry was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Entry was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -60,7 +60,12 @@ class EntriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
-      @entry = Entry.find(params[:id])
+
+      begin
+        @entry = Entry.find(params[:id])
+      rescue
+        redirect_to root_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
